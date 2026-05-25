@@ -348,7 +348,8 @@ nav li:hover{
   grid-template-rows: auto auto;
   gap: 50px;
   max-width: 1000px;
-  transform: translateX(-75px);
+  /* transform: translateX(-75px); */
+  margin-left: -80px;
 }
 
 .about-section .card{
@@ -700,12 +701,20 @@ nav li:hover{
 }
 
   .hero-section .hero-mobile-box p{
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     font-weight: 400;
     font-size: 24px;
     text-align: center;
   }
 
   .hero-section .hero-mobile-box h1{
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     font-weight: 600;
     font-size: 32px;
     text-align: center;
@@ -713,6 +722,10 @@ nav li:hover{
   }
 
   .hero-section .hero-mobile-box img{
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     width: 120px;
     height: 10px;
     text-align: center;
@@ -726,6 +739,10 @@ nav li:hover{
 }
 
   .hero-section .hero-mobile-box .social-icons a {
+    animation-name: slideUp;
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     color: white;
     font-size: 36px;
 }
@@ -808,7 +825,7 @@ nav li:hover{
     margin-block: 50px;
   }
   
-  .skills-section .contianer{
+  .skills-section .container{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -855,6 +872,7 @@ nav li:hover{
     border-right: none;
     border-top: none;
     margin-block: 50px;
+    margin-left: 0px;
     padding-left: 10px;
     background-color: transparent;
 }
