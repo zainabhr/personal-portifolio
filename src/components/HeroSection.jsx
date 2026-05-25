@@ -3,10 +3,33 @@ import atSign from '../assets/At sing.png'
 import githubLogo from '../assets/github logo.png'
 import linkedInLogo from '../assets/linkedIn logo.png'
 import heroImage from '../assets/hero image.png'
+import { useState, useRef, useEffect } from 'react'
 
 
 function Hero() {
-
+    
+        const [isIntersect, setIsintersect] = useState(false)
+        const ref = useRef(null)
+        useEffect(() =>{
+            const observer = new IntersectionObserver(
+                ([entry]) =>{
+                    setIsintersect(entry.isIntersecting)
+                },{
+                    rootMargin: '-100px',
+                    threshold: 0.1
+                }
+            );
+            console.log(isIntersect);
+            observer.observe(ref.current)
+            return () => observer.disconnect()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [])
+    
+        useEffect(() => {
+            if(isIntersect){
+                ref.current.classList.add('slide-in')
+            }
+    }, [isIntersect])
     return (
         <>
             <section className="hero-section">
@@ -39,7 +62,7 @@ function Hero() {
                 </div>
 
             </section>
-            <section className='IT-barries'>
+            <section ref={ref} className='IT-barries'>
                 <h3>IT BERRIES</h3>
                 <p>I am one of the members of a scientific club that brings together enthusiasts of the Internet and new technologies. 
                     At ITberries, we design and develop websites and web applications. 

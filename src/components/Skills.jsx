@@ -14,16 +14,35 @@ import EnLangIcon from '../assets/English Lang icon.png'
 import SpLangIcon from '../assets/Spanish Lang icon.png'
 import CplusPlusIcon from '../assets/C++ icon.png'
 import CIcon from '../assets/C icon.png'
+import { useEffect } from 'react'
+import { addAnimation } from '../Animations'
 
 
 function Skills() {
+        useEffect(() =>{
+        addAnimation('skills-h2', 'slide-in')
+    }, [])
+
+    useEffect(() =>{
+        addAnimation('skills-using-div', 'slide-in')
+    }, [])
+
+    useEffect(() =>{
+        addAnimation('skills-learning-div', 'slide-in')
+    }, [])
+
+    useEffect(() =>{
+        addAnimation('skills-other-div', 'slide-in')
+    }, [])
 
     return (
         <section className='radial-cover-bg' id='skills'>
             <section className="skills-section">
-                <h2>SKILLS</h2>
-                <h3>USING NOW:</h3>
-                <div className="contianer">
+
+                <div className='skills-h2'><h2>SKILLS</h2></div>
+
+                <div className='skills-using-div'><h3>USING NOW:</h3>
+                <div className="container">
                     <div className='skill'>
                         <img src={HTMLIcon} alt="HTML Icon" />
                         <p>HTML</p>
@@ -57,8 +76,10 @@ function Skills() {
                         <p>FIGMA</p>
                     </div>
                 </div>
-                <h3>LEARNING:</h3>
-                <div className="contianer">
+                </div>
+
+                <div className='skills-learning-div'><h3>LEARNING:</h3>
+                <div className="container">
                     <div className='skill'>
                         <img src={NodeJsIcon} alt="NodeJs Icon" />
                         <p>NODEJS</p>
@@ -76,8 +97,10 @@ function Skills() {
                         <p>TYPESCRIPT</p>
                     </div>
                 </div>
-                <h3>OTHER SKILLS:</h3>
-                <div className="contianer">
+                </div>
+
+                <div className='skills-other-div'><h3>OTHER SKILLS:</h3>
+                <div className="container">
                     <div className='skill'>
                         <img src={EnLangIcon} alt="En Lang Icon" />
                         <p>English C1/C2</p>
@@ -95,6 +118,8 @@ function Skills() {
                         <p>C</p>
                     </div>
                 </div>
+                </div>
+
             </section>
         </section>
 )

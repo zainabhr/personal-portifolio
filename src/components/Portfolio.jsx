@@ -1,11 +1,26 @@
 import project1 from '../assets/project 1.jpg'
 import project2 from '../assets/project 2.jpg'
 import project3 from '../assets/project 3.jpg'
+import { useEffect } from 'react'
+import { addAnimation } from '../Animations'
+
 function Portfolio() {
+    useEffect(() =>{
+        addAnimation('portfolio-h2', 'slide-in')
+    }, [])
+
+    useEffect(() =>{
+        addAnimation('filter-bar', 'slide-in')
+    }, [])
+
+    useEffect(() =>{
+        addAnimation('projects', 'slide-in')
+    }, [])
 
     return (
         <section className="portfolio-section" id='portfolio'>
-            <h2>PORTFOLIO</h2>
+
+            <div className='portfolio-h2'><h2>PORTFOLIO</h2></div>
             <div className="projects-box">
                 <div className="filter-bar">
                     <span className='active'>All</span>
